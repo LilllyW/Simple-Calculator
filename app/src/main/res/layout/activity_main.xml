@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:padding="20dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/txtLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter your numbers: "
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="30dp"/>
+
+    <EditText
+        android:id="@+id/etFirst"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_20sdp"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/txtLabel"
+        android:inputType="numberDecimal"/>
+
+    <EditText
+        android:id="@+id/etSecond"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:inputType="numberDecimal"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_20sdp"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/etFirst"/>
+
+  <LinearLayout
+        android:id="@+id/llCalculator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etSecond"
+        android:weightSum="1">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight=".25"
+            android:text="+"
+            android:onClick="clickCalculate"
+            android:tag="+"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight=".25"
+            android:text="-"
+            android:onClick="clickCalculate"
+            android:tag="-"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight=".25"
+            android:text="*"
+            android:onClick="clickCalculate"
+            android:tag="*"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight=".25"
+            android:text="/"
+            android:onClick="clickCalculate"
+            android:tag="/"
+            android:layout_margin="@dimen/_10sdp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rlResult"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/llCalculator"/>
+
+</RelativeLayout>
